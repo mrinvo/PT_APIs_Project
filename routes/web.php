@@ -15,10 +15,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('hosted');
+});
+
+Route::get('/invoice', function () {
+    return view('invoice');
 });
 
 Route::prefix('/payment')->group(function () {
 
     route::post('/initiate',[PaymentController::class,'initiate']);
+    route::post('/invoice',[PaymentController::class,'initiateInvoice']);
 });

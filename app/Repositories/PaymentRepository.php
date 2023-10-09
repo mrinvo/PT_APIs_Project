@@ -120,27 +120,44 @@ class PaymentRepository
      * @param array<string, mixed>|null $userDefined User-defined data.
      * @return array<string, mixed> The generated payload.
      */
-    public function GenerateInvoicePayload($request, $customerDetails = null, $shippingDetails = null, $userDefined = null)
-    {
-        $payload = [];
+/**
+ * Generate a payload for invoice payment based on the request and associated data.
+ *
+ * @param mixed $request The payment request data.
+ * @param array<string, mixed>|null $customerDetails Customer details.
+ * @param array<string, mixed>|null $shippingDetails Shipping details.
+ * @param array<string, mixed>|null $userDefined User-defined data.
+ * @return array<string, mixed> The generated payload.
+ */
+public function GenerateInvoicePayload($request, $customerDetails = null, $shippingDetails = null, $userDefined = null)
+{
+    $line_items = [];
 
-        // Generate the payload for invoice payment and return it.
-        $payload = [
-            "profile_id" => env('PT_PROFILE_ID'),
-            "tran_type" => $request->tran_type,
-            "tran_class" => $request->tran_class,
-            "cart_id" => $request->cart_id,
-            "cart_currency" => $request->cart_currency,
-            "cart_amount" => (double)$request->cart_amount,
-            "cart_description" => $request->cart_description,
-            "paypage_lang" => "en",
-            "payment_methods" => ["all"],
-            "invoice" => [],
-            "customer_details" => $customerDetails,
-            "shipping_details" => $shippingDetails,
-            "user_defined" => $userDefined,
-        ];
+    // Extract line items from the request and convert unit cost to a double.
+    $lineItems = $request['line_items'];
 
-        return $payload;
+    foreach ($lineItems as $lineItem) {
+        $lineItem["unit_cost"] = (double)$lineItem["unit_cost"];
+        $line_items[] = $lineItem;
     }
+
+    // Generate the payload for invoice payment and return it.
+    $payload = [
+        "profile_id" => env('PT_PROFILE_ID'),
+        "tran_type" => $request->tran_type,
+        "tran_class" => $request->tran_class,
+        "cart_id" => $request->cart_id,
+        "cart_currency" => $request->cart_currency,
+        "cart_amount" => (double)$request->cart_amount,
+        "cart_description" => $request->cart_description,
+        "paypage_lang" => "en",
+        "payment_methods" => ["all"],
+        "invoice" => ["line_items" => $line_items],
+        "customer_details" => $customerDetails,
+        "shipping_details" => $shippingDetails,
+        "user_defined" => $userDefined,
+    ];
+
+    return $payload;
+}
 }

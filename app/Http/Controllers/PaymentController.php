@@ -17,7 +17,7 @@ class PaymentController extends Controller
         $this->paymentService = $paymentService;
     }
 
-    public function initiate(ValidateInitialRequest $request){
+    public function initiate(Request $request){
 
 
         $response = $this->paymentService->processRequest($request);
@@ -25,6 +25,19 @@ class PaymentController extends Controller
 
 
         return (isset($response->redirect_url)) ? redirect($response->redirect_url): $response;
+
+
+
+    }
+
+    public function initiateInvoice(Request $request){
+
+
+        $response = $this->paymentService->processRequest($request);
+
+
+
+        return (isset($response->invoice_link)) ? redirect($response->invoice_link): $response;
 
 
 
