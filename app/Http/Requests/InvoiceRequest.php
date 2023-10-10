@@ -23,9 +23,6 @@ class InvoiceRequest extends FormRequest
     {
         return [
             //
-             //transaction fiealds
-             "tran_type" => "required|in:sale,auth,capture,void,refund,register",
-             "tran_class" => "required|in:ecom,recurring",
 
               //cart fiealds
              "cart_id" => 'required',
@@ -38,7 +35,7 @@ class InvoiceRequest extends FormRequest
 
              "customer_email" => "required|email",
 
-             "customer_phone" => "required|numeric",
+             "customer_phone" => "required",
 
              "customer_street" => "required",
 
@@ -51,9 +48,9 @@ class InvoiceRequest extends FormRequest
              "customer_zip" => "required|numeric",
 
              //invoice
-             "line_items|required|array",
-             "line_items.unit_cost|required|numeric",
-             "line_items.quantity|required|numeric",
+
+            //  "line_items.*|required|numeric",
+
 
              //shipping fields
              // "shipping_name" => "required",

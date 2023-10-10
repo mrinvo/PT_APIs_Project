@@ -2,8 +2,10 @@
 
 namespace App\Traits;
 
+use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
+use Illuminate\Foundation\Http\FormRequest;
 
 /**
  * Trait SendRequestTrait
@@ -16,7 +18,7 @@ trait SendRequestTrait
      * Send a payment request to a specific endpoint.
      *
      * @param string $paymentType The type of payment (e.g., hosted or invoice).
-     * @param array<string, mixed> $data The data to be sent in the request.
+     * @param array<string, FormRequest> $data The data to be sent in the request.
      * @return mixed The response from the payment service or an error message.
      */
     public function sendPaymentRequest($paymentType, $data)
@@ -26,7 +28,7 @@ trait SendRequestTrait
             $client = new Client();
 
             // Determine the payment service domain based on the region.
-            $domain = 'Region.' . env('PT_REGION');
+            $domain = 'paytabs.' . env('PT_REGION');
             $region = config($domain);
 
             // Get the URL for the specified payment type.
@@ -40,9 +42,13 @@ trait SendRequestTrait
                 'json' => $data,
             ]);
 
+
             // Return the JSON-decoded response.
             return json_decode($paymentRequest->getBody());
+
         } catch (RequestException $e) {
+
+            
             // If there is an error, return the error message.
             return $e->getMessage();
         }

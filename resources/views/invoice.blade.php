@@ -6,31 +6,23 @@
         <div id="wrapper">
             <div class="container1">
                 <div class="order">
-                    <h2>Your order summary</h2>
+                    <h2>Your Invoice Items</h2>
                     <div class="item">
                         <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/1978060/balle.png' alt=''>
                         <div class="info">
                             <h4>Trixie Soccer Ball, Vinyl</h4>
                             <p class="quantity">Quantity: 1</p>
-                            <p class="price">30$</p>
+                            <p class="price">50$</p>
                         </div> <!-- .info -->
                     </div> <!-- .item -->
 
-                    <div class="item">
-                        <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/1978060/frisbee.png' alt=''>
-                        <div class="info">
-                            <h4>Trixie Dog Activity Dog Disc</h4>
-                            <p class="quantity">Quantity: 3</p>
-                            <p class="price">30$</p>
-                        </div> <!-- .info -->
-                    </div> <!-- .item -->
 
                     <div class="item">
                         <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/1978060/harnais.png' alt=''>
                         <div class="info">
                             <h4>Julius K9 Powerharness, Mini/M</h4>
                             <p class="quantity">Quantity: 1</p>
-                            <p class="price">40$</p>
+                            <p class="price">50$</p>
                         </div> <!-- .info -->
                     </div> <!-- .item -->
 
@@ -43,7 +35,7 @@
             <div class="container2">
                 <div class="checkout">
                     <p><i class="fas fa-check-circle"></i>Shipping</p>
-                    <p><i class="fas fa-check-circle"></i>Checkout</p>
+                    <p><i class="fas fa-check-circle"></i>Invoice</p>
                     <p><i class="fas fa-check-circle"></i>Payment</p>
 
                     <div class="payment">
@@ -51,14 +43,14 @@
                             <div class="infos">
 
                                 <div class="method">
-                                    <h2>Hosted Payment Page</h2>
+                                    <h2>Invoice</h2>
                                 </div> <!-- .method -->
 
                             @if ($errors->any())
-                                <div class="alert alert-danger">
+                                <div style="color: red;" class="alert alert-danger">
                                     <ul>
                                         @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
+                                        <li style="color: red !important;">{{ $error }}</li>
                                         @endforeach
                                     </ul>
                                 </div>

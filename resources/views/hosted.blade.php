@@ -54,6 +54,15 @@
                                     <h2>Hosted Payment Page</h2>
                                 </div> <!-- .method -->
 
+                                @if ($errors->any())
+                                <div style="color: red;" class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                        <li style="color: red !important;">{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
 
                             <form action="/payment/initiate" method="POST">
                                     @csrf

@@ -10,7 +10,13 @@ return [
     ],
     'Oman'	 =>     'https://secure-oman.paytabs.com',
     'Jordan' => 	'https://secure-jordan.paytabs.com',
-    'Global'  => 	'https://secure-global.paytabs.com'
+    'Global'  => 	'https://secure-global.paytabs.com',
+
+
+
+
+    'tran_type' => 'sale',
+    'tran_class' => 'ecom',
 ];
 
 ?>

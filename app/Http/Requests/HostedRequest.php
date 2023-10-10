@@ -38,7 +38,7 @@ class HostedRequest extends FormRequest
 
             "customer_email" => "required|email",
 
-            "customer_phone" => "required|numeric",
+            "customer_phone" => "required",
 
             "customer_street" => "required",
 
