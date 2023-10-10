@@ -24,6 +24,6 @@ Route::get('/invoice', function () {
 
 Route::prefix('/payment')->group(function () {
 
-    route::post('/initiate',[PaymentController::class,'initiate']);
+    route::post('/initiate',[PaymentController::class,'initiateHosted']);
     route::post('/invoice',[PaymentController::class,'initiateInvoice']);
 });

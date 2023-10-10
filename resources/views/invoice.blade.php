@@ -53,6 +53,17 @@
                                 <div class="method">
                                     <h2>Hosted Payment Page</h2>
                                 </div> <!-- .method -->
+
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+
                                 <form action="/payment/invoice" method="POST">
                                     @csrf
                                 <h3 class="customerDetailsTitle">Customer Details</h2>

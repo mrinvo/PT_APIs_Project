@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\HostedRequest;
+use App\Http\Requests\InvoiceRequest;
 use App\Http\Requests\ValidateInitialRequest;
 use App\Services\PaymentService;
 use Illuminate\Http\Request;
@@ -17,7 +19,7 @@ class PaymentController extends Controller
         $this->paymentService = $paymentService;
     }
 
-    public function initiate(Request $request){
+    public function initiateHosted(HostedRequest $request){
 
 
         $response = $this->paymentService->processRequest($request);
@@ -30,7 +32,7 @@ class PaymentController extends Controller
 
     }
 
-    public function initiateInvoice(Request $request){
+    public function initiateInvoice(InvoiceRequest $request){
 
 
         $response = $this->paymentService->processRequest($request);

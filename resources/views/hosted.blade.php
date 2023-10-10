@@ -53,7 +53,9 @@
                                 <div class="method">
                                     <h2>Hosted Payment Page</h2>
                                 </div> <!-- .method -->
-                                <form action="/payment/initiate" method="POST">
+
+
+                            <form action="/payment/initiate" method="POST">
                                     @csrf
                                 <h3 class="customerDetailsTitle">Customer Details</h2>
                                 <div class="customerDetailsWrapper">

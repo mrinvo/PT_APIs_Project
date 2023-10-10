@@ -60,7 +60,7 @@ class HostedRequest extends FormRequest
 
             // "shipping_street" => "required",
 
-            // "shipping_country" => "required",
+            // "shipping_country" => "required",s
 
             // "shipping_city" => "required",
 
