@@ -19,7 +19,7 @@ trait SendRequestTrait
      *
      * @param string $paymentType The type of payment (e.g., hosted or invoice).
      * @param array<string, FormRequest> $data The data to be sent in the request.
-     * @return mixed The response from the payment service or an error message.
+     * @return FormRequest The response from the payment service or an error message.
      */
     public function sendPaymentRequest($paymentType, $data)
     {
@@ -48,7 +48,7 @@ trait SendRequestTrait
 
         } catch (RequestException $e) {
 
-            
+
             // If there is an error, return the error message.
             return $e->getMessage();
         }

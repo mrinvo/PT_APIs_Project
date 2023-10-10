@@ -86,7 +86,16 @@
                                     </div> <!-- cardHolderName -->
                                     <div class="cardHolderName">
                                         <p class="title">Country</p>
-                                        <input type="text" name="customer_country">
+                                        <select  name="customer_country">
+                                            <option value="EG">Egypt</option>
+                                            <option value="AE">Uinted Arab Emirates</option>
+                                            <option value="SA">Saudi Arapia</option>
+                                            <option value="CA">Canada</option>
+                                            <option value="GB">United Kingdom</option>
+                                            <option value="AU">Australia</option>
+                                            <option value="DE">Germany</option>
+                                            <!-- Add more countries here -->
+                                        </select>
                                     </div> <!-- cardHolderName -->
                                     <div class="cardHolderName">
                                         <p class="title">City</p>
@@ -127,7 +136,16 @@
                                             </div> <!-- cardHolderName -->
                                             <div class="cardHolderName">
                                                 <p class="title">Country</p>
-                                                <input type="text" name="shipping_country">
+                                                <select  name="customer_country">
+                                                    <option value="EG">Egypt</option>
+                                                    <option value="AE">Uinted Arab Emirates</option>
+                                                    <option value="SA">Saudi Arapia</option>
+                                                    <option value="CA">Canada</option>
+                                                    <option value="GB">United Kingdom</option>
+                                                    <option value="AU">Australia</option>
+                                                    <option value="DE">Germany</option>
+                                                    <!-- Add more countries here -->
+                                                </select>
                                             </div> <!-- cardHolderName -->
                                             <div class="cardHolderName">
                                                 <p class="title">City</p>
@@ -150,7 +168,7 @@
                                     <p class="title">Choose A Payment Option</p>
                                     <div>
                                         <input type="radio" name="paymentOption" value="cash" id="cashOnDelivery">
-                                        <label for="cashOnDelivery">Cash on Delivery</label>
+                                        <label disabled for="cashOnDelivery">Cash on Delivery</label>
                                     </div>
                                     <div>
                                         <input type="radio" name="paymentOption" value="paytaps" id="paytaps">

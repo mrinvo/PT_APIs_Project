@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('hosted');
 });
 
+Route::get('/error', function () {
+    return view('fail');
+});
+
 Route::get('/invoice', function () {
     return view('invoice');
 });

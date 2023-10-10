@@ -5,6 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Repositories\PaymentRepository;
+use Illuminate\Foundation\Http\FormRequest;
 
 /**
  * Class DataWrapper
@@ -30,14 +31,14 @@ class DataWrapper
     /**
      * User-defined data associated with the payment.
      *
-     * @var mixed
+     * @var FormRequest
      */
     public $userDefined;
 
     /**
      * Invoice data, if applicable.
      *
-     * @var mixed
+     * @var FormRequest
      */
     public $invoice;
 
@@ -51,14 +52,14 @@ class DataWrapper
     /**
      * The payload data for the payment request.
      *
-     * @var mixed
+     * @var FormRequest
      */
     public $payload;
 
         /**
      * The instance of the payment Repository.
      *
-     * @var obje
+     * @var FormRequest
      */
     protected $PaymentRepository;
 
@@ -82,7 +83,7 @@ class DataWrapper
         $this->paymentType = $request->payment_type;
 
 
-        // Prepare the payload based on the payment type. -switch case
+        // Prepare the payload based on the payment type.
 
         switch($this->paymentType){
 
@@ -91,7 +92,7 @@ class DataWrapper
                 $this->payload = $this->GenerateHostedPayload($request, $this->customerDetails);
 
                 break;
-            
+
             case 'invoice':
 
                 $this->payload = $this->GenerateInvoicePayload($request, $this->customerDetails);
@@ -99,12 +100,12 @@ class DataWrapper
                 break;
 
 
-                
+
         }
 
-      
+
         }
-    
+
 
         /**
      * Generate customer details based on a given request.
@@ -195,7 +196,7 @@ class DataWrapper
             "profile_id" => env('PT_PROFILE_ID'),
             "tran_type" => $request->tran_type,
             "tran_class" => $request->tran_class,
-            // "cart_id" => $request->cart_id,
+            "cart_id" => $request->cart_id,
             "cart_currency" => $request->cart_currency,
             "cart_amount" => (double)$request->cart_amount,
             "cart_description" => $request->cart_description,

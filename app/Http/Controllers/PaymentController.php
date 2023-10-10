@@ -45,11 +45,12 @@ class PaymentController extends Controller
      */
     public function initiateHosted(HostedRequest $request)
     {
+
         // Process the hosted payment request using the PaymentRepository.
         $response = $this->PaymentRepository->processRequest($request);
 
         // Check if a redirect URL is provided in the response and redirect the user if available.
-        return (isset($response->redirect_url)) ? redirect($response->redirect_url) : $response;
+        return (isset($response->redirect_url)) ? redirect($response->redirect_url) : view('error',compact('response'));
     }
 
     /**
@@ -67,6 +68,6 @@ class PaymentController extends Controller
 
 
         // Check if an invoice link is provided in the response and redirect the user if available.
-        return (isset($response->invoice_link)) ? redirect($response->invoice_link) : $response;
+        return (isset($response->invoice_link)) ? redirect($response->invoice_link) : view('error',compact('response'));
     }
 }

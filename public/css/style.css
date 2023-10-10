@@ -195,7 +195,11 @@ select:focus {
 	margin-bottom: 10%;
 }
 
-.cardHolderName input {
+.cardHolderName input{
+	width: 100%;
+}
+
+.cardHolderName select{
 	width: 100%;
 }
 

@@ -23,50 +23,46 @@ class HostedRequest extends FormRequest
     {
         return [
 
-            //transaction fiealds
-            "tran_type" => "required|in:sale,auth,capture,void,refund,register",
-            "tran_class" => "required|in:ecom,recurring",
-
              //cart fiealds
-            "cart_id" => 'required',
-            "cart_currency" => "required",
-            "cart_amount" => 'required|numeric',
-            "cart_description" => "required",
+            "cart_id" => 'required|min:1|max:64',
+            "cart_currency" => "required|in:EGP,USD,AED,SAR",
+            "cart_amount" => 'required|numeric|min:0.01|max:9999999999.99',
+            "cart_description" => "required|min:1|max:128",
 
             //billing fiealds
-            "customer_name" => "required",
+            "customer_name" => "required|max:128|min:4",
 
             "customer_email" => "required|email",
 
             "customer_phone" => "required",
 
-            "customer_street" => "required",
+            "customer_street" => "required|max:128|min:4",
 
-            "customer_country" => "required",
+            "customer_country" => "required|in:AE,EG,SA,CA,GB,AU,DE",
 
-            "customer_city" => "required",
+            "customer_city" => "required|max:128|min:4",
 
-            "customer_state" => "required",
+            "customer_state" => "required|max:128|min:4",
 
             "customer_zip" => "required|numeric",
 
-
             //shipping fields
-            // "shipping_name" => "required",
+            // "shipping_name" => "required|max:128|min:4",
 
-            // "shipping_email" => "required",
+            // "shipping_email" => "required|email",
 
-            // "shipping_phone" => "required",
+            // "shipping_phone" => "required|regex:/^[0-9]{10}$/",
 
-            // "shipping_street" => "required",
+            // "shipping_street" => "required|max:128|min:4",
 
-            // "shipping_country" => "required",s
+            // "shipping_country" => "required|in:AE,EG,SA,CA,GB,AU,DE",
 
-            // "shipping_city" => "required",
+            // "shipping_city" => "required|max:128|min:4",
 
-            // "shipping_state" => "required",
+            // "shipping_state" => "required|max:128|min:4",
 
-            // "shipping_zip" => "required"
+            // "shipping_zip" => "required|numeric|max:7|min:5",
+
 
 
         ];
