@@ -9,6 +9,10 @@
 	font-weight: 600;
 }
 
+body{
+    height: 100vh;
+}
+
 #wrapper {
 	display: table;
 	table-layout: fixed;
@@ -96,6 +100,8 @@ hr {
 .checkout {
 	width: 90%;
 	margin: 0 auto;
+    padding: 100px 0;
+
 }
 
 .checkout p {

@@ -37,7 +37,7 @@
 
             }
             .method h2{
-                color: #ff0000;
+                color: green;
             }
 
             </style>
@@ -54,11 +54,18 @@
                             <div class="infos error">
 
                                 <div class="method">
-                                    <h2>Something went wrong!</h2>
+                                    <h2>Successful Payment</h2>
 
                                 </div> <!-- .method -->
-                                <i class="fas fa-times fa-lg" style="color: #ff0000;"></i>
-                                <div class="alert alert-danger">{{ $response }}</div>
+                                <i class="fas fa-check-circle" style="color: green;"></i>
+                                <div class="alert alert-success">
+                                    <ul>
+                                        <li>Cart id: cart_232323</li>
+                                        <br>
+                                        <li>Transaction Ref: TST2392039223</li>
+
+                                    </ul>
+                                </div>
                             </div> <!-- .infos -->
                         </div> <!-- .content -->
                     </div> <!-- .payment -->

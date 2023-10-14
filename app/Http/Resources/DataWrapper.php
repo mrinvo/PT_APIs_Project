@@ -205,6 +205,7 @@ class DataWrapper
             "customer_details" => $customerDetails,
             "shipping_details" => $shippingDetails,
             "user_defined" => $userDefined,
+            "return" => "http://127.0.0.1:8000/success"
         ];
 
         return $payload;
@@ -255,6 +256,7 @@ public function GenerateInvoicePayload($request, $customerDetails = null, $shipp
         "customer_details" => $customerDetails,
         "shipping_details" => $shippingDetails,
         "user_defined" => $userDefined,
+        "return" => "http://127.0.0.1:8000/success"
     ];
 
     return $payload;

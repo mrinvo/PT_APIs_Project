@@ -19,7 +19,10 @@ Route::get('/', function () {
 });
 
 Route::get('/error', function () {
-    return view('fail');
+    return view('error2');
+});
+Route::get('/success', function () {
+    return view('success2');
 });
 
 Route::get('/invoice', function () {

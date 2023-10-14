@@ -167,8 +167,8 @@
                                 <div class="security">
                                     <p class="title">Choose A Payment Option</p>
                                     <div>
-                                        <input type="radio" name="paymentOption" value="cash" id="cashOnDelivery">
-                                        <label disabled for="cashOnDelivery">Cash on Delivery</label>
+                                        <input disabled type="radio" name="paymentOption" value="cash" id="cashOnDelivery">
+                                        <label for="cashOnDelivery">Cash on Delivery</label>
                                     </div>
                                     <div>
                                         <input type="radio" name="paymentOption" value="paytaps" id="paytaps">
