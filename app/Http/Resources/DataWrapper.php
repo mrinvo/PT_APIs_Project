@@ -205,7 +205,7 @@ class DataWrapper
             "customer_details" => $customerDetails,
             "shipping_details" => $customerDetails,
             "user_defined" => $userDefined,
-            "return" => "https://apis.test/payment/return"
+            "return" => "https://paytabs-tutorials.test/payment/return"
         ];
 
         return $payload;
@@ -256,7 +256,7 @@ public function GenerateInvoicePayload($request, $customerDetails = null, $shipp
         "customer_details" => $customerDetails,
         "shipping_details" => $shippingDetails,
         "user_defined" => $userDefined,
-        "return" => "https://apis.test/payment/return"
+        "return" => "https://paytabs-tutorials.test/payment/return"
     ];
 
     return $payload;

@@ -83,6 +83,11 @@
   text-decoration: none;
   color: #388dbc;
 }
+.sf-dump-expanded{
+    color:orangered;
+}
+
+
 
 @media only screen and (max-width: 767px) {
   .notfound .notfound-404 {
@@ -130,13 +135,14 @@ word-break: break-word;
                                     </div>
 
                                 </div>
+                                @if($displayPayload)
                                 <p>
-                                    @php
-                                        echo "<pre style='white-space: pre-wrap; word-break: break-word;'>" . $response . "</pre>"
-                                    @endphp
-
-
+                                    <pre style='white-space: pre-wrap; word-break: break-word;'>
+                                        @dump($response)
+                                    </pre>
                                 </p>
+                                @endif
+
                             </div> <!-- .infos -->
                         </div> <!-- .content -->
                     </div> <!-- .payment -->

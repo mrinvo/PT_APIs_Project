@@ -68,6 +68,13 @@
                                 </div>
                             </div> <!-- .infos -->
                         </div> <!-- .content -->
+                        @if($displayPayload)
+                        <p>
+                            <pre style='white-space: pre-wrap; word-break: break-word;'>
+                                @dump($response)
+                            </pre>
+                        </p>
+                        @endif
                     </div> <!-- .payment -->
                 </div> <!-- .checkout -->
             </div> <!-- .container2 -->

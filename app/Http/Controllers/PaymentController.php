@@ -74,11 +74,14 @@ class PaymentController extends Controller
     public function return(Request $request){
 
 
-        $response = $request->getContent();
 
-        $array = explode("&", $request->getContent());
+        parse_str($request->getContent(),$response);
 
 
-        return ($array[6]=="respStatus=A") ? view('success2',compact('response')) : view('error',compact('response'));
+
+        $displayPayload = true;
+
+
+        return ($response['respStatus']=="A") ? view('success2',compact('response','displayPayload')) : view('error',compact('response','displayPayload'));
     }
 }

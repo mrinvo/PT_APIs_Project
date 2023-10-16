@@ -87,6 +87,10 @@
 ul li{
     font-size: 20px;
 }
+.sf-dump-expanded{
+    color:orangered;
+}
+
 
 @media only screen and (max-width: 767px) {
   .notfound .notfound-404 {
@@ -123,7 +127,7 @@ ul li{
                                             <ul>
                                                 <li>Cart id: cart_2084</li>
                                                 <li>Transaction Ref: TST28237409238</li>
-                                                <li>Amount: 100$</li>
+
 
                                             </ul>
                                         </p>
@@ -131,9 +135,13 @@ ul li{
                                     </div>
 
                                 </div>
-                                @php
-                                echo "<pre style='white-space: pre-wrap; word-break: break-word;'>" . $response . "</pre>"
-                            @endphp
+                                @if($displayPayload)
+                                <p>
+                                    <pre style='white-space: pre-wrap; word-break: break-word;'>
+                                        @dump($response)
+                                    </pre>
+                                </p>
+                                @endif
                             <br>
                             </div> <!-- .infos -->
                         </div> <!-- .content -->
