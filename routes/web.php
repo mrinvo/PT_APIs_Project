@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PaymentController;
+use Faker\Provider\ar_EG\Payment;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,8 +30,11 @@ Route::get('/invoice', function () {
     return view('invoice');
 });
 
+
+
 Route::prefix('/payment')->group(function () {
 
+    Route::post('/return', [PaymentController::class, 'return']);
     route::post('/initiate',[PaymentController::class,'initiateHosted']);
     route::post('/invoice',[PaymentController::class,'initiateInvoice']);
 });

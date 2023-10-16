@@ -111,6 +111,8 @@ return [
 
     'faker_locale' => 'en_US',
 
+    'log' => env('APP_LOG', 'single'),
+
     /*
     |--------------------------------------------------------------------------
     | Encryption Key

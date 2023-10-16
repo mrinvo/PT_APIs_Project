@@ -50,7 +50,7 @@ trait SendRequestTrait
 
 
             // If there is an error, return the error message.
-            return $e->getMessage();
+            return $e->getResponse()->getBody()->getContents();
         }
     }
 }

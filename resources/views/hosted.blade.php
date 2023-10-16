@@ -106,7 +106,7 @@
                                         <input type="text" name="customer_state">
                                     </div> <!-- cardHolderName -->
                                     <div class="cardHolderName">
-                                        <p class="title">Zip COde</p>
+                                        <p class="title">Zip Code</p>
                                         <input type="text" name="customer_zip">
                                     </div> <!-- cardHolderName -->
                                 </div>
@@ -156,7 +156,7 @@
                                                 <input type="text" name="shipping_state">
                                             </div> <!-- cardHolderName -->
                                             <div class="cardHolderName">
-                                                <p class="title">Zip COde</p>
+                                                <p class="title">Zip Code</p>
                                                 <input type="text" name="shipping_zip">
                                             </div> <!-- cardHolderName -->
                                         </div>
@@ -182,7 +182,7 @@
                                     <input hidden type="text" name="cart_id" value="cart1">
                                     <input hidden type="text" name="cart_description" value="cart 1 description">
                                     <input hidden type="text" name="cart_currency" value="USD">
-                                    <input hidden type="text" name="cart_amount" value="100">
+                                    <input hidden type="text" name="cart_amount" value="200">
                                 </div><!-- .security -->
                                 <input type="submit" class="sub">
                                 {{-- <button>Checkout</button> --}}

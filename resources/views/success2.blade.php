@@ -129,7 +129,12 @@ ul li{
                                         </p>
                                         <a href="/">Back to homepage</a>
                                     </div>
+
                                 </div>
+                                @php
+                                echo "<pre style='white-space: pre-wrap; word-break: break-word;'>" . $response . "</pre>"
+                            @endphp
+                            <br>
                             </div> <!-- .infos -->
                         </div> <!-- .content -->
                     </div> <!-- .payment -->

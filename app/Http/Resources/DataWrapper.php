@@ -203,9 +203,9 @@ class DataWrapper
             "paypage_lang" => "en",
             "payment_methods" => ["all"],
             "customer_details" => $customerDetails,
-            "shipping_details" => $shippingDetails,
+            "shipping_details" => $customerDetails,
             "user_defined" => $userDefined,
-            "return" => "http://127.0.0.1:8000/success"
+            "return" => "https://apis.test/payment/return"
         ];
 
         return $payload;
@@ -256,7 +256,7 @@ public function GenerateInvoicePayload($request, $customerDetails = null, $shipp
         "customer_details" => $customerDetails,
         "shipping_details" => $shippingDetails,
         "user_defined" => $userDefined,
-        "return" => "http://127.0.0.1:8000/success"
+        "return" => "https://apis.test/payment/return"
     ];
 
     return $payload;

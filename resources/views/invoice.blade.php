@@ -98,7 +98,7 @@
                                         <input type="text" name="customer_state">
                                     </div> <!-- cardHolderName -->
                                     <div class="cardHolderName">
-                                        <p class="title">Zip COde</p>
+                                        <p class="title">Zip Code</p>
                                         <input type="text" name="customer_zip">
                                     </div> <!-- cardHolderName -->
                                 </div>
@@ -148,7 +148,7 @@
                                                 <input type="text" name="shipping_state">
                                             </div> <!-- cardHolderName -->
                                             <div class="cardHolderName">
-                                                <p class="title">Zip COde</p>
+                                                <p class="title">Zip Code</p>
                                                 <input type="number" name="shipping_zip">
                                             </div> <!-- cardHolderName -->
                                         </div>

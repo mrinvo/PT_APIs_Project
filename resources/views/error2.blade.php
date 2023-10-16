@@ -5,97 +5,40 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <style>
-#notfound {
-  position: relative;
-  height: 70vh;
-}
+            .error{
+                height: 700px;
+            }
 
-#notfound .notfound {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
+            .message{
+                color: black !imporatant;
+                border: 3px solid red;
+                padding: 20px;
+            }
 
-.notfound {
-  max-width: 560px;
-  width: 100%;
-  padding-left: 160px;
-  line-height: 1.1;
-}
+            .checkout p{
+                    color: rgb(0, 0, 0);
+                    font-size: 1.6em;
 
-.notfound .notfound-404 {
-  position: absolute;
-  left: 0;
-  top: 0;
-  display: inline-block;
-  width: 140px;
-  height: 140px;
-  background-image: url('/emoji.png');
-  background-size: cover;
-}
+            }
+            .checkout p:last-of-type, .checkout i:nth-of-type(3) {
+                             opacity: 1;
+            }
+            .checkout i{
+                color: red;
+                margin-left: 50%;
 
-.notfound .notfound-404:before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-transform: scale(2.4);
-      -ms-transform: scale(2.4);
-          transform: scale(2.4);
-  border-radius: 50%;
-  background-color: #f2f5f8;
-  z-index: -1;
-}
+                font-size: 100px;
+                margin-bottom: 40px;
 
-.notfound h1 {
-  font-family: 'Nunito', sans-serif;
-  font-size: 50px;
-  font-weight: 700;
-  margin-top: 0px;
-  margin-bottom: 10px;
-  color: #151723;
-  text-transform: uppercase;
-}
+            }
+            .fail{
+                color: red;
+                margin-left: 50%;
 
-.notfound h2 {
-  font-family: 'Nunito', sans-serif;
-  font-size: 21px;
-  font-weight: 400;
-  margin: 0;
-  text-transform: uppercase;
-  color: #151723;
-}
-
-.notfound p {
-  font-family: 'Nunito', sans-serif;
-  color: #34383b;
-  font-weight: 400;
-}
-
-.notfound a {
-  font-family: 'Nunito', sans-serif;
-  display: inline-block;
-  font-weight: 700;
-  border-radius: 40px;
-  text-decoration: none;
-  color: #388dbc;
-}
-
-@media only screen and (max-width: 767px) {
-  .notfound .notfound-404 {
-    width: 110px;
-    height: 110px;
-  }
-  .notfound {
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 110px;
-  }
-}
-
+            }
+            .method h2{
+                color: #ff0000;
+            }
 
             </style>
     </head>
@@ -110,15 +53,12 @@
                         <div class="content">
                             <div class="infos error">
 
-                                <div id="notfound">
-                                    <div class="notfound">
-                                        <div class="notfound-404"></div>
-                                        <h1>Oops! Something went wrong</h1>
+                                <div class="method">
+                                    <h2>Something went wrong!</h2>
 
-                                        <p>Sorry but the page you are looking for does not exist, have been removed. name changed or is temporarily unavailable</p>
-                                        <a href="/">Back to homepage</a>
-                                    </div>
-                                </div>
+                                </div> <!-- .method -->
+                                <i class="fas fa-times fa-lg" style="color: #ff0000;"></i>
+                                <div class="alert alert-danger">{{ $response }}</div>
                             </div> <!-- .infos -->
                         </div> <!-- .content -->
                     </div> <!-- .payment -->

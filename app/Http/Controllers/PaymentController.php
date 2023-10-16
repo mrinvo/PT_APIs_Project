@@ -70,4 +70,15 @@ class PaymentController extends Controller
         // Check if an invoice link is provided in the response and redirect the user if available.
         return (isset($response->invoice_link)) ? redirect($response->invoice_link) : view('error',compact('response'));
     }
+
+    public function return(Request $request){
+
+
+        $response = $request->getContent();
+
+        $array = explode("&", $request->getContent());
+
+
+        return ($array[6]=="respStatus=A") ? view('success2',compact('response')) : view('error',compact('response'));
+    }
 }

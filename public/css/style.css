@@ -21,7 +21,7 @@ body{
 }
 
 .container1 {
-	background-color: white;
+	background-color: fbfbfb;
 	float: none;
 	display: table-cell;
 	vertical-align: middle;
@@ -51,7 +51,7 @@ body{
 .item {
 	width: 100%;
 	height: auto;
-	background-color: white;
+	background-color: fbfbfb;
 	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
 	margin-bottom: 10%;
 	overflow: hidden;
@@ -79,7 +79,7 @@ body{
 	background-color: #3f73ca;
 	position: absolute;
 	padding: 1% 2%;
-	color: white;
+	color: fbfbfb;
 	bottom: 5%;
 	right: 2%;
 }
@@ -111,7 +111,7 @@ hr {
 }
 
 .checkout p, .checkout i {
-	color: white;
+	color: fbfbfb;
 	font-size: 1.6em;
 }
 
@@ -124,7 +124,7 @@ hr {
 }
 
 .payment {
-	background-color: white;
+	background-color: #fbfbfb;
 	width: 100%;
 	height: auto;
 	background-image: url(/logo2.gif);
@@ -149,7 +149,7 @@ hr {
 	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 	width: 25%;
 	height: auto;
-	background-color: white;
+	background-color: #fbfbfb;
 	cursor: pointer;
 	margin-right: 5%;
 	margin-bottom: 10%;
@@ -232,7 +232,7 @@ select:last-of-type {
 	width: 100%;
 	padding: 5%;
 	border: none;
-	color: white;
+	color: #fbfbfb;
 	cursor: pointer;
 	transition: 0.3s ease-in-out;
 	margin-bottom: 4%;
